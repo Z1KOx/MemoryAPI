@@ -20,10 +20,11 @@ public:
 	Memory() = default;
 	~Memory() noexcept = default;
 
-	Memory( const Memory& other )            = delete; // Copy constructor
-	Memory( Memory&& other )                 = delete; // Move constructor
-	Memory& operator=( const Memory& other ) = delete; // Copy assignment operator
-	Memory& operator=( Memory&& other )      = delete; // Move assignment operator
+	// Delete copy and move operations to prevent unintended behavior
+	Memory( const Memory& other )            = delete;
+	Memory( Memory&& other )                 = delete;
+	Memory& operator=( const Memory& other ) = delete;
+	Memory& operator=( Memory&& other )      = delete;
 
 public:
     // Write a value of type T to a memory address at the specified offset
