@@ -28,7 +28,7 @@
 	return procID;
 }
 
-[[nodiscard]] uintptr_t  __fastcall Memory::getModuleBase( const std::string& modName, const DWORD procID ) const noexcept
+[[nodiscard]] uintptr_t __fastcall Memory::getModuleBase( const std::string& modName, const DWORD procID ) const noexcept
 {
 	uintptr_t modBaseAddr{ 0 };
 	const auto hSnapShot{ CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, procID) };
