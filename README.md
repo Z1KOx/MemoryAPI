@@ -18,11 +18,11 @@ localPlayer.write( 0xF8, 500 );
 
 ```cpp
 // Obtaining the process ID
-Memory mem();
+Memory mem;
 auto procID = mem.getProcID( "target.exe" );
 
 // Acquiring the module base address
-Memory mem();
+Memory mem;
 auto modBaseAddr = mem.getModuleBase( "target.exe", procID );
 ```
 
