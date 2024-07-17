@@ -7,9 +7,9 @@
 	DWORD procID{ 0 };
 
 	// Snapshot all currently running processes
-	const auto hSnapShot{ CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, NULL) };
+	const auto hSnapShot{ CreateToolhelp32Snapshot( TH32CS_SNAPPROCESS, NULL ) };
 
-	if ( hSnapShot != INVALID_HANDLE_VALUE )
+	if ( hSnapShot == nullptr || hSnapShot != INVALID_HANDLE_VALUE )
 	{
 		PROCESSENTRY32 pe;
 		ZeroMemory( &pe, sizeof(pe) );
@@ -37,12 +37,12 @@
 	uintptr_t modBaseAddr{ 0 };
 
 	// Snapshot all currently loaded modules in the process
-	const auto hSnapShot{ CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, procID) };
+	const auto hSnapShot{ CreateToolhelp32Snapshot( TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, procID ) };
 
-	if ( hSnapShot != INVALID_HANDLE_VALUE )
+	if ( hSnapShot == nullptr || hSnapShot != INVALID_HANDLE_VALUE )
 	{
 		MODULEENTRY32 me;
-		ZeroMemory(&me, sizeof(me));
+		ZeroMemory( &me, sizeof(me) );
 		me.dwSize = sizeof( me );
 
 		// Iterate through each module to find the specified module by name
