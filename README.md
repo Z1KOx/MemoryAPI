@@ -29,4 +29,4 @@ auto modBaseAddr = mem.getModuleBase(L"target.exe", procID);
 ```bash
 git clone https://github.com/Z1KOx/MemoryAPI.git
 ```
-- If you don't have Git installed, you can download it <a href="https://git-scm.com/downloads">here</a>
+- If Git is not installed on your system, you can <a href="https://git-scm.com/downloads">download</a> it from the official website.
