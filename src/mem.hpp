@@ -9,7 +9,13 @@ class Memory
 public:
 	explicit Memory( uintptr_t* address ) noexcept
 		: m_address(address)
-	{ }
+	{ 
+		if ( m_address == nullptr )
+		{
+			MessageBox( nullptr, "Memory address cannot be nullptr", "Memory Error", MB_OK | MB_ICONEXCLAMATION );
+			return;
+		}
+	}
 
 	Memory() = default;
 	~Memory() noexcept = default;
