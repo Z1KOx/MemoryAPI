@@ -21,7 +21,7 @@ mem.write( 0xF8, 500 );
 auto procID = mem.getProcID( L"target.exe" );
 
 // Acquiring the module base address
-auto modBaseAddr = mem.getModuleBase(L"target.exe", procID);
+auto modBaseAddr = mem.getModuleBase( L"target.exe", procID );
 ```
 
 # Getting Started
