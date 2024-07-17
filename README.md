@@ -6,21 +6,23 @@
 
 ```cpp
 // Reading memory
-Memory mem( LOCAL_PLAYER );
-auto currentAmmo = mem.read<DWORD>( 0x140 );
+Memory localPlayer( LOCAL_PLAYER );
+auto currentAmmo = localPlayer.read<DWORD>( 0x140 );
 
 // Writing to memory
-Memory mem( LOCAL_PLAYER );
-mem.write( 0xF8, 500 );
+Memory localPlayer( LOCAL_PLAYER );
+localPlayer.write( 0xF8, 500 );
 ```
 
 ### Process and Module Address Retrieval
 
 ```cpp
 // Obtaining the process ID
+Memory mem();
 auto procID = mem.getProcID( L"target.exe" );
 
 // Acquiring the module base address
+Memory mem();
 auto modBaseAddr = mem.getModuleBase( L"target.exe", procID );
 ```
 
