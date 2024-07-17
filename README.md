@@ -27,7 +27,7 @@ auto modBaseAddr = mem.getModuleBase( L"target.exe", procID );
 ```
 
 # Getting Started
-### 1. Clone this project using Git
+### Clone this project using Git
 ```bash
 git clone https://github.com/Z1KOx/MemoryAPI.git
 ```
