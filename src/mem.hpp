@@ -21,14 +21,14 @@ public:
 
 public:
     template<typename T>
-    void __fastcall write(const uintptr_t offset, const T value) const noexcept { *reinterpret_cast<T*>((*m_address + offset)) = value; }
+    void __fastcall write( const uintptr_t offset, const T value ) const noexcept { *reinterpret_cast<T*>( (*m_address + offset) ) = value; }
 
     template<typename T>
-    [[nodiscard]] T read(const uintptr_t offset) const noexcept { return *reinterpret_cast<T*>((*m_address + offset)); }
+    [[nodiscard]] T read( const uintptr_t offset ) const noexcept { return *reinterpret_cast<T*>( (*m_address + offset) ); }
 
 public:
 	[[nodiscard]] DWORD getProcID( const std::string& procName ) const noexcept;
-	[[nodiscard]] uintptr_t __fastcall getModuleBase (const std::string& modName, const DWORD procID ) const noexcept;
+	[[nodiscard]] uintptr_t __fastcall getModuleBase ( const std::string& modName, const DWORD procID ) const noexcept;
 
 private:
 	uintptr_t* m_address{ nullptr };
