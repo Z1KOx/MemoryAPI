@@ -26,6 +26,16 @@ Memory mem;
 auto modBaseAddr = mem.getModuleBase( "target.exe", procID );
 ```
 
+### Nop opcode
+```cpp
+// This is how you apply a NOP instruction
+NopHook ammoNop( reinterpret_cast<BYTE*>(MODULE_BASE + 0x637E9), 2 );
+
+// To toggle the NOP state
+ammoNop.toggleActivation() ? ( ammoNop.activateNop(), printf("Nop activated\n") )
+                           : ( ammoNop.patchNop(), printf("Nop patched\n") );
+```
+
 # Getting Started
 ### Clone this project using Git
 ```bash
