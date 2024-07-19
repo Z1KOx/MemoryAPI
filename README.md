@@ -10,7 +10,6 @@ Memory localPlayer( LOCAL_PLAYER );
 auto currentAmmo = localPlayer.read<DWORD>( 0x140 );
 
 // Writing to memory
-Memory localPlayer( LOCAL_PLAYER );
 localPlayer.write( 0xF8, 500 );
 ```
 
@@ -22,7 +21,6 @@ Memory mem;
 auto procID = mem.getProcID( "target.exe" );
 
 // Acquiring the module base address
-Memory mem;
 auto modBaseAddr = mem.getModuleBase( "target.exe", procID );
 ```
 
