@@ -26,7 +26,7 @@ auto modBaseAddr = mem.getModuleBase( "target.exe", procID );
 
 ### Nop opcode
 ```cpp
-// This is how you apply a NOP instruction
+// This is how you initialize a NOP instruction
 NopHook decAmmoShooting( reinterpret_cast<BYTE*>(MODULE_BASE + 0x637E9), 2 );
 
 // To toggle the NOP state
