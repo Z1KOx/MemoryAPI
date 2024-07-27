@@ -9,7 +9,7 @@
 	// Snapshot all currently running processes
 	const auto hSnapShot{ CreateToolhelp32Snapshot( TH32CS_SNAPPROCESS, NULL ) };
 
-	if ( hSnapShot == nullptr || hSnapShot != INVALID_HANDLE_VALUE )
+	if ( hSnapShot != nullptr || hSnapShot != INVALID_HANDLE_VALUE )
 	{
 		PROCESSENTRY32 pe;
 		ZeroMemory( &pe, sizeof(pe) );
@@ -39,7 +39,7 @@
 	// Snapshot all currently loaded modules in the process
 	const auto hSnapShot{ CreateToolhelp32Snapshot( TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, procID ) };
 
-	if ( hSnapShot == nullptr || hSnapShot != INVALID_HANDLE_VALUE )
+	if ( hSnapShot != nullptr || hSnapShot != INVALID_HANDLE_VALUE )
 	{
 		MODULEENTRY32 me;
 		ZeroMemory( &me, sizeof(me) );
